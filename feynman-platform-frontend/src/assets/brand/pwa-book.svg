@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <linearGradient id="coverA" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#B6DEF6" />
+      <stop offset="0.45" stop-color="#8CC8EC" />
+      <stop offset="1" stop-color="#68ABD6" />
+    </linearGradient>
+    <linearGradient id="coverB" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9FD2F2" />
+      <stop offset="0.45" stop-color="#79BCE6" />
+      <stop offset="1" stop-color="#589FD0" />
+    </linearGradient>
+    <linearGradient id="pagesA" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFCF4" />
+      <stop offset="0.55" stop-color="#FBF1DE" />
+      <stop offset="1" stop-color="#EFE0C8" />
+    </linearGradient>
+    <linearGradient id="ribbonA" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9FD5F7" />
+      <stop offset="1" stop-color="#6CB4E2" />
+    </linearGradient>
+  </defs>
+
+  <!-- 整体放大到画布的 ~80%，图标在小尺寸下更清晰 -->
+  <g transform="translate(512 512) scale(1.2) translate(-510 -500)">
+  <!-- 底部书 -->
+  <g>
+    <rect x="170" y="582" width="680" height="200" rx="34" fill="url(#coverB)" />
+    <rect x="186" y="634" width="648" height="96" rx="10" fill="url(#pagesA)" />
+    <g stroke="#DCC9AC" stroke-width="3" stroke-linecap="round" opacity="0.5">
+      <line x1="214" y1="654" x2="806" y2="654" />
+      <line x1="214" y1="670" x2="806" y2="670" />
+      <line x1="214" y1="686" x2="806" y2="686" />
+      <line x1="214" y1="702" x2="806" y2="702" />
+      <line x1="214" y1="718" x2="806" y2="718" />
+    </g>
+    <rect x="170" y="720" width="680" height="62" rx="30" fill="url(#coverB)" />
+    <rect x="196" y="596" width="628" height="14" rx="7" fill="#FFFFFF" opacity="0.45" />
+  </g>
+
+  <!-- 中间书 -->
+  <g>
+    <rect x="196" y="396" width="660" height="200" rx="34" fill="url(#coverA)" />
+    <rect x="212" y="448" width="628" height="96" rx="10" fill="url(#pagesA)" />
+    <g stroke="#DCC9AC" stroke-width="3" stroke-linecap="round" opacity="0.5">
+      <line x1="240" y1="468" x2="812" y2="468" />
+      <line x1="240" y1="484" x2="812" y2="484" />
+      <line x1="240" y1="500" x2="812" y2="500" />
+      <line x1="240" y1="516" x2="812" y2="516" />
+      <line x1="240" y1="532" x2="812" y2="532" />
+    </g>
+    <rect x="196" y="534" width="660" height="62" rx="30" fill="url(#coverA)" />
+    <rect x="222" y="410" width="608" height="14" rx="7" fill="#FFFFFF" opacity="0.5" />
+  </g>
+
+  <!-- 顶部书 -->
+  <g>
+    <rect x="220" y="210" width="640" height="200" rx="34" fill="url(#coverA)" />
+    <rect x="236" y="262" width="608" height="96" rx="10" fill="url(#pagesA)" />
+    <g stroke="#DCC9AC" stroke-width="3" stroke-linecap="round" opacity="0.5">
+      <line x1="264" y1="282" x2="816" y2="282" />
+      <line x1="264" y1="298" x2="816" y2="298" />
+      <line x1="264" y1="314" x2="816" y2="314" />
+      <line x1="264" y1="330" x2="816" y2="330" />
+      <line x1="264" y1="346" x2="816" y2="346" />
+    </g>
+    <rect x="220" y="348" width="640" height="62" rx="30" fill="url(#coverA)" />
+    <rect x="246" y="224" width="588" height="14" rx="7" fill="#FFFFFF" opacity="0.55" />
+  </g>
+
+  <!-- 书签 -->
+  <g>
+    <path d="M332 236 H404 V704 L368 664 L332 704 Z" fill="url(#ribbonA)" stroke="#5EA6D4" stroke-width="3" stroke-linejoin="round" />
+    <path d="M348 240 H360 V676 L348 690 Z" fill="#FFFFFF" opacity="0.45" />
+  </g>
+  </g>
+</svg>

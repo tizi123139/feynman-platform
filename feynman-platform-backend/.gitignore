@@ -1,0 +1,6 @@
+.env
+node_modules/
+
+# 本地向量库（vectra）与旧 Chroma 数据
+vector_data/
+chroma_data/
