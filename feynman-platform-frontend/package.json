@@ -47,7 +47,7 @@
   },
   "build": {
     "appId": "com.feynman-platform.app",
-    "productName": "Feynman Learning Platform",
+    "productName": "FeynLab",
     "icon": "build/icon.png",
     "files": [
       "dist/**/*",

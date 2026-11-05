@@ -9,12 +9,14 @@ const ROOT = path.resolve(import.meta.dirname, '..');
 const PUBLIC_DIR = path.join(ROOT, 'public');
 const BUILD_DIR = path.join(ROOT, 'build');
 
-/* 黏土星球：底色 + 薄荷行星 + 淡紫陨石坑 + 奶油光环 */
-function brandSvg({ rounded = false, scale = 1 } = {}) {
+/* 黏土星球：薄荷行星 + 淡紫陨石坑 + 奶油光环（bg=false 时去底色、透明底） */
+function brandSvg({ rounded = false, scale = 1, bg = true } = {}) {
   const inner = scale === 1 ? '' : `transform="translate(256 256) scale(${scale}) translate(-256 -256)"`;
-  const bg = rounded
-    ? '<rect x="8" y="8" width="496" height="496" rx="116" fill="url(#bg)"/>'
-    : '<rect width="512" height="512" fill="url(#bg)"/>';
+  const bgRect = !bg
+    ? ''
+    : rounded
+      ? '<rect x="8" y="8" width="496" height="496" rx="116" fill="url(#bg)"/>'
+      : '<rect width="512" height="512" fill="url(#bg)"/>';
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
   <defs>
     <radialGradient id="bg" cx="32%" cy="22%" r="88%">
@@ -41,7 +43,7 @@ function brandSvg({ rounded = false, scale = 1 } = {}) {
     </clipPath>
   </defs>
 
-  ${bg}
+  ${bgRect}
 
   <g ${inner}>
     <ellipse cx="256" cy="272" rx="226" ry="64" fill="none" stroke="url(#ring)" stroke-width="26"
@@ -81,5 +83,5 @@ await render(full, 192, path.join(PUBLIC_DIR, 'pwa-192x192.png'));
 await render(rounded, 180, path.join(PUBLIC_DIR, 'apple-touch-icon.png'));
 // maskable 要求内容收在中心安全区内，行星整体缩到 78%
 await render(maskable, 512, path.join(PUBLIC_DIR, 'maskable-512x512.png'));
-// electron-builder 默认从 build/icon.png（≥256）自动生成 .ico
-await render(full, 512, path.join(BUILD_DIR, 'icon.png'));
+// electron-builder 默认从 build/icon.png（≥256）自动生成 .ico；桌面图标用透明底，避免快捷方式出现色块背景
+await render(brandSvg({ bg: false }), 512, path.join(BUILD_DIR, 'icon.png'));

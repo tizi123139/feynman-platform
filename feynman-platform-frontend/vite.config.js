@@ -14,8 +14,8 @@ export default defineConfig(() => ({
       registerType: 'autoUpdate',
       // 配置 manifest.json
       manifest: {
-        name: '费曼小课堂 · 讲明白才算学会',
-        short_name: '费曼小课堂',
+        name: 'FeynLab',
+        short_name: 'FeynLab',
         description: '用讲解驱动学习的费曼学习法平台：语音复述、间隔复习、知识图谱与 AI 陪练。',
         lang: 'zh-CN',
         theme_color: '#FFF8F0',
